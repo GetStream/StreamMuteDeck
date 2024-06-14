@@ -1,11 +1,24 @@
 {
+   "action": {
+      "default_icon": {
+         "128": "images/logo-128.png",
+         "16": "images/logo-16.png",
+         "32": "images/logo-32.png",
+         "48": "images/logo-48.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "permissions": [ "tabs" ],
+      "service_worker": "background/service-worker.js"
+   },
    "content_scripts": [ {
-      "js": [ "contentScript.js" ],
-      "matches": [ "https://stream-calls-dogfood.vercel.app/*" ],
-      "run_at": "document_idle"
+      "js": [ "observers/streamVideoObserver.js", "contentScript.js" ],
+      "matches": [ "https://getstream.io/video/demos/*" ],
+      "run_at": "document_start"
    } ],
-   "description": "This extension discovers and controls Google Meet calls and passes on the status to MuteDeck. Get MuteDeck from https://mutedeck.com",
-   "host_permissions": [ "https://stream-calls-dogfood.vercel.app/*" ],
+   "description": "Control Stream Demo Call. Get the MuteDeck app from https://mutedeck.com",
+   "host_permissions": [ "https://getstream.io/video/demos/*" ],
    "icons": {
       "128": "images/logo-128.png",
       "16": "images/logo-16.png",
@@ -13,12 +26,12 @@
       "48": "images/logo-48.png"
    },
    "manifest_version": 3,
-   "name": "MuteDeck Stream Meet Extension",
+   "name": "MuteDeck Stream",
    "options_ui": {
       "open_in_tab": false,
       "page": "options.html"
    },
-   "permissions": [ "storage" ],
+   "permissions": [ "storage", "activeTab", "tabs" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.1"
+   "version": "3.0"
 }

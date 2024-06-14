@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>MuteDeck Stream Video Meet Extension Options</title>
+  </head>
 
-<head>
-  <title>MuteDeck Stream Extension Options</title>
-</head>
+  <body>
+    <p>Only change these options when you know what you're doing.</p>
+    <table border="0">
+      <tr>
+        <td><b>MuteDeck host</b></td>
+        <td><input type="text" id="mutedeck_host" /></td>
+      </tr>
+      <tr>
+        <td><b>MuteDeck port</b></td>
+        <td><input type="text" id="mutedeck_port" /></td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td><b>Enable SSL</b></td>
+        <td><input type="checkbox" value="true" id="mutedeck_enable_ssl" /></td>
+      </tr>
+      <tr>
+        <td><b>SSL port</b></td>
+        <td><input type="text" id="mutedeck_port_ssl" /></td>
+      </tr>
+    </table>
 
-<body>
-  <p>Only change these options when you know what you're doing.</p>
-  <table border="0">
-    <tr>
-      <td><b>MuteDeck host</b></td>
-      <td><input type="text" id="mutedeck_host" /></td>
-    </tr>
-    <tr>
-      <td><b>MuteDeck port</b></td>
-      <td><input type="text" id="mutedeck_port" /></td>
-    </tr>
-  </table>
+    <br /><br />
+    <button id="save">Save</button>
+    <div id="status"></div>
 
-  <br /><br />
-  <button id="save">Save</button>
-  <div id="status"></div>
-
-  <script src="options.js"></script>
-</body>
-
+    <script src="options.js"></script>
+  </body>
 </html>

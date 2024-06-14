@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Text Extension</title>
+    <style>
+      body {
+        min-width: 250px;
+      }
+      .status-container {
+        margin-top: 20px;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <div id="connection"></div>
+    <div id="ssl_accept_warning"></div>
+    <div class="status-container">
+      <b>Status</b>
+      <table>
+        <tr>
+          <td>Call status:</td>
+          <td id="google-meet-call"></td>
+        </tr>
+        <tr>
+          <td>Mute status:</td>
+          <td id="mute-status"></td>
+        </td>
+        <tr>
+          <td>Camera status:</td>
+          <td id="camera-status"></td>
+        </td>
+        <tr>
+          <td>Share status:</td>
+          <td id="share-status"></td>
+        </td>
+        <tr>
+          <td>Recording status:</td>
+          <td id="recording-status"></td>
+        </td>
+      </table>
+    </div>
+  </body>
+</html>
