@@ -13,7 +13,10 @@ class StreamVideoObserver {
 
   initialize = () => {
     // detect whether getstream.io is the hostname of the page, otherwise do not initialize
-    if (window.location.hostname !== "getstream.io") {
+    if (
+      window.location.hostname !== "getstream.io" &&
+      window.location.hostname !== "pronto.getstream.io"
+    ) {
       console.log(
         "Not on Stream page page, not initializing StreamVideoObserver"
       );
@@ -215,7 +218,8 @@ class StreamVideoObserver {
       video: this.isVideoStarted ? "started" : "stopped",
       share: this.isShareStarted ? "started" : "stopped",
       record: this.isRecordStarted ? "started" : "stopped",
-      custom_svg_path: ":/images/logo.svg",
+      custom_svg_path:
+        "/Users/jeroenleenarts/code/StreamMuteDeck/images/logo.svg",
     };
     console.log(message);
     chrome.runtime.sendMessage({
