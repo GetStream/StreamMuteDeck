@@ -29,7 +29,7 @@ class StreamVideoObserver {
     this._observer.observe(document.body, {
       childList: false,
       attributes: true,
-      attributeFilter: ["class"],
+      attributeFilter: ["data-testid"],
       attributeOldValue: true,
       subtree: true,
     });
