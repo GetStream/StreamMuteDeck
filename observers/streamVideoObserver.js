@@ -95,28 +95,28 @@ class StreamVideoObserver {
       }
 
       // find the recording indicator
-      let recordingIndicator = document.querySelector(
-        'div[id="recording-indicator-custom"]'
+      let buttonRecordingIndicator = document.querySelector(
+        'button[data-testid="recording-start-button"]'
       );
-      if (recordingIndicator) {
-        if (!this.isRecordStarted) {
-          changed = true;
-        }
-        this.isRecordStarted = true;
-      } else {
+      if (buttonRecordingIndicator) {
         if (this.isRecordStarted) {
           changed = true;
         }
         this.isRecordStarted = false;
+      } else {
+        if (!this.isRecordStarted) {
+          changed = true;
+        }
+        this.isRecordStarted = true;
       }
 
       // find the sharing button
-      let buttonShare = document.querySelector('button[id="share-button"]');
+
+      let buttonShare = document.querySelector(
+        'button[data-testid="screen-share-stop-button"]'
+      );
       if (buttonShare) {
-        let presenting = Boolean(
-          buttonShare.getAttribute("data-state") ===
-            "call-control-stop-presenting-new"
-        );
+        let presenting = !buttonShare.hasAttribute("disabled");
         if (presenting) {
           if (!this.isShareStarted) {
             changed = true;
@@ -177,32 +177,43 @@ class StreamVideoObserver {
   };
 
   toggleShare = () => {
-    let buttonShare = document.querySelector('button[id="share-button"]');
-    buttonShare.click();
+    let shareButton = document.querySelector(
+      "button[data-testid='screen-share-start-button']"
+    );
+    if (shareButton) {
+      shareButton.click();
+    } else {
+      let unshareButton = document.querySelector(
+        "button[data-testid='screen-share-stop-button']"
+      );
+      if (unshareButton) {
+        unshareButton.click();
+      }
+    }
   };
 
   toggleRecord = () => {
-    console.log("Recording is not supported via web client");
+    let recordButton = document.querySelector(
+      "button[data-testid='recording-start-button']"
+    );
+    if (recordButton) {
+      recordButton.click();
+    } else {
+      let stopRecordButton = document.querySelector(
+        "button[data-testid='recording-stop-button']"
+      );
+      if (stopRecordButton) {
+        stopRecordButton.click();
+      }
+    }
   };
 
   leaveCall = () => {
-    let buttonLeave = document.querySelector('button[id="hangup-button"]');
-    buttonLeave.click();
-  };
-
-  _pressPossibleConfirmationButton = () => {
-    // Get the iframe element
-    let iframeDocument = this._getZoomCallFrame();
-    if (!iframeDocument) {
-      return;
-    }
-
-    let confirmationButton = iframeDocument.querySelector(
-      "button.leave-meeting-options__btn"
+    let buttonLeave = document.querySelector(
+      'button[data-testid="leave-call-button"]'
     );
-    if (confirmationButton) {
-      console.log("Clicking confirmation button");
-      confirmationButton.click();
+    if (buttonLeave) {
+      buttonLeave.click();
     }
   };
 
