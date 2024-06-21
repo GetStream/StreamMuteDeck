@@ -41,5 +41,5 @@
   },
   "permissions": ["storage", "activeTab", "tabs"],
   "update_url": "https://clients2.google.com/service/update2/crx",
-  "version": "3.0"
+  "version": "1.0"
 }
