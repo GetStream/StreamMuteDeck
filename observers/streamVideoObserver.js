@@ -12,11 +12,8 @@ class StreamVideoObserver {
   }
 
   initialize = () => {
-    // detect whether getstream.io is the hostname of the page, otherwise do not initialize
-    if (
-      window.location.hostname !== "getstream.io" &&
-      window.location.hostname !== "pronto.getstream.io"
-    ) {
+    // detect whether a configured hostname is the hostname of the page, otherwise do not initialize
+    if (!streamVideoURLs.some((url) => window.location.hostname.includes(url))) {
       console.log(
         "Not on Stream page page, not initializing StreamVideoObserver"
       );

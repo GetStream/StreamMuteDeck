@@ -59,7 +59,8 @@ function bringToFront() {
     let meetFound = false;
 
     for (let i = 0; i < tabs.length; i++) {
-     if (tabs[i].url.includes('https://getstream.io/video/demos') && message.meetingType === 'stream-video') {
+      // see if the tabs[i].url is a Stream Video tab by checking if it contains any of the streamVideoURLs
+      if (streamVideoURLs.some((url) => tabs[i].url.includes(url))) {
         meetFound = true;
         chrome.tabs.update(tabs[i].id, { active: true });
         chrome.windows.update(tabs[i].windowId, { focused: true });

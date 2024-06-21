@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "js": ["observers/streamVideoObserver.js", "contentScript.js"],
+      "js": ["config.js", "observers/streamVideoObserver.js", "contentScript.js"],
       "matches": [
         "https://getstream.io/video/demos/*",
         "https://pronto.getstream.io/*"
