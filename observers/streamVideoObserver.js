@@ -201,9 +201,27 @@ class StreamVideoObserver {
       );
       if (stopRecordButton) {
         stopRecordButton.click();
+        setTimeout(this._pressStopRecordingConfirmationButton, 250);
       }
     }
   };
+
+  _pressStopRecordingConfirmationButton = () => {
+    // find the second button nested inside the <div> with the class "str-video__end-recording__confirmation" and click it
+    const mainDiv = document.querySelector('.str-video__end-recording__confirmation');
+
+    if (mainDiv) {
+      const buttons = mainDiv.querySelectorAll('button');
+
+      if (buttons.length == 2) {
+        const secondButton = buttons[1];
+        if (secondButton) {
+          console.log(secondButton);
+          secondButton.click();
+        }
+      }
+    }
+  }
 
   leaveCall = () => {
     let buttonLeave = document.querySelector(
