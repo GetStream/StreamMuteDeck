@@ -9,7 +9,7 @@ It is required to have the [MuteDeck](https://mutedeck.com/) desktop app install
 
 - Download and install the [MuteDeck app](https://mutedeck.com/downloads?ref=streamvideo)
 - Install the [StreamDeck plugin](https://mutedeck.com/help/docs/plugins.html#installing-the-stream-deck-plugin?ref=streamvideo).
-- Clone the StreamMuteDeck Chrome Extension repository to a local folder
+- Clone the StreamMuteDeck Chrome Extension repository to a local folder: `git clone https://github.com/GetStream/StreamMuteDeck.git`
 - Copy the file `config.js.example` to `config.js`.
 - Install the StreamMuteDeck Chrome Extension from your file system into your Chrome-based browser.
 
