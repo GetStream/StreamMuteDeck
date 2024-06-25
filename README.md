@@ -5,6 +5,8 @@ This Chrome extension showcases controlling the Stream Video Demo using an [Elga
 
 It is required to have the [MuteDeck](https://mutedeck.com/) desktop app installed. MuteDeck is an application bridging the gap between browserbased calling applications and a hardware device like a StreamDeck. Beyond StreamDecks, MuteDeck also supports [LoupeDeck](https://loupedeck.com/) and [TouchPortal](https://www.touch-portal.com/).
 
+https://github.com/GetStream/StreamMuteDeck/assets/39677/6d60d30e-8442-4402-a606-91567b85ef02
+
 ## Getting Started
 
 - Download and install the [MuteDeck app](https://mutedeck.com/downloads?ref=streamvideo)
