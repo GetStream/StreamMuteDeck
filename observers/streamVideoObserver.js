@@ -13,7 +13,9 @@ class StreamVideoObserver {
 
   initialize = () => {
     // detect whether a configured hostname is the hostname of the page, otherwise do not initialize
-    if (!streamVideoURLs.some((url) => window.location.hostname.includes(url))) {
+    if (
+      !streamVideoURLs.some((url) => window.location.hostname.includes(url))
+    ) {
       console.log(
         "Not on Stream page page, not initializing StreamVideoObserver"
       );
@@ -208,10 +210,12 @@ class StreamVideoObserver {
 
   _pressStopRecordingConfirmationButton = () => {
     // find the second button nested inside the <div> with the class "str-video__end-recording__confirmation" and click it
-    const mainDiv = document.querySelector('.str-video__end-recording__confirmation');
+    const mainDiv = document.querySelector(
+      ".str-video__end-recording__confirmation"
+    );
 
     if (mainDiv) {
-      const buttons = mainDiv.querySelectorAll('button');
+      const buttons = mainDiv.querySelectorAll("button");
 
       if (buttons.length == 2) {
         const secondButton = buttons[1];
@@ -221,7 +225,7 @@ class StreamVideoObserver {
         }
       }
     }
-  }
+  };
 
   leaveCall = () => {
     let buttonLeave = document.querySelector(
@@ -244,8 +248,7 @@ class StreamVideoObserver {
       video: this.isVideoStarted ? "started" : "stopped",
       share: this.isShareStarted ? "started" : "stopped",
       record: this.isRecordStarted ? "started" : "stopped",
-      custom_svg_path:
-        "/Users/jeroenleenarts/code/StreamMuteDeck/images/logo.svg",
+      custom_svg_path: ":/images/logo.svg",
     };
     console.log(message);
     chrome.runtime.sendMessage({
