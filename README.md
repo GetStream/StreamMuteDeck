@@ -1,5 +1,5 @@
 # Stream Video Chrome Extension for MuteDeck
-![Twitter-Enter StreamDeck-1600x900px](https://github.com/GetStream/StreamMuteDeck/assets/39677/5b606ba1-4b64-4e3c-a1b3-88f945ef713a)
+![Integrating StreamDeck](https://github.com/GetStream/StreamMuteDeck/assets/39677/9f50a941-7c6b-4ac4-a0d4-7c8a7913b2e6)
 
 This Chrome extension showcases controlling the Stream Video Demo using an [Elgato](https://www.elgato.com/us/en) StreamDeck or similar hardware device.
 
